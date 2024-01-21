@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer>
+        function toggleCards() {
+    var lowerMain = document.querySelector('.lower-main');
+    lowerMain.classList.toggle('show-all-cards');
+}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul class="top-of-nav">
+                <li>Dashboard</li>
+            </ul>
+            <ul class="list1">
+                <li class="item1"><a href="#">Home</a></li>
+                <li class="item2"><a href="#">Profile</a></li>
+                <li class="item3"><a href="#">Messages</a></li>
+                <li class="item4"><a href="#">History</a></li>
+                <li class="item5"><a href="#">Tasks</a></li>
+                <li class="item6"><a href="#">Communities</a></li>
+            </ul>
+            <ul class="list2">
+                <li class="item1"><a href="#">Settings</a></li>
+                <li class="item2"><a href="#">Support</a></li>
+                <li class="item3"><a href="#">Privacy</a></li>
+            </ul>
+        </div>
+        <div class="header">
+            <div class="search">
+                <div class="search-container">
+                    <div class="search-icon" id="search"></div>
+                    <form action=""><input type="search" id="search"></form>
+                </div>
+                <div class="right-logo">
+                    <a href="">
+                        <div class="right-icon"></div>
+                    </a>
+                    <img alt="">
+                    <h3>G-LHUB</h3>
+                </div>
+            </div>
+            <div class="intro">
+                <div class="image-heading">
+                    <img alt="">
+                    <p><a href="">@admin</a></p>
+                    <h2>Global Learning Hub</h2>
+                </div>
+                <div class="buttons">
+                    <button type="button">New</button>
+                    <button type="button">Upload</button>
+                    <button type="button">Share</button>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="form-container">
+                <form action="">
+                    <div><label for="total-students">Total Students:</label><progress id="total-students" value="10" max="100"></progress></div>
+                    <div><label for="new-students">New Students:</label><progress id="new-students" value="5" max="100"></progress></div>
+                    <div><label for="total-units">Total Units:</label><progress id="total-units" value="10" max="100"></progress></div>
+                     <div><label for="fees">Fees Collection</label><progress id="fees" value="2" max="100"></progress></div>
+                    </form>   
+                <div class="chart-holder"></div>
+            </div>
+            <div class="lower-main">
+                <div class="notice">
+                    <h3><a href="">Notice board</a></h3>
+                    <ul>
+                        <li class="item1-1">
+                            <img src="./SVG/alert-circle.svg" alt="">
+                            <h4>New Teacher</h4>
+                            <p>New techer alert!!</p>
+                        </li>
+                        <li class="item1-2">
+                            <img src="./SVG/alert-circle.svg" alt="">
+                            <h4>New Fee Structure</h4>
+                            <p>Fee structure 2023/2024</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="courses">
+                    <h3><a href="">Courses</a></h3>
+                    <ul>
+                        <li class="list-2-1">
+                            <img src="./SVG/language-html5.svg" alt="">
+                            <h4><a href="">HTML</a></h4>
+                            <p>Deep dive,19 April</p>
+                        </li>
+                        <li class="list-2-2">
+                            <img src="./SVG/language-css3.svg" alt="">
+                            <h4><a href="">CSS</a></h4>
+                            <p>Introduction Course,20 August</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="classes">
+                    <h3><a href="">Classes</a></h3>
+                    <ul>
+                        <li class="list3-1">
+                            <img src="./SVG/face-man-profile.svg" alt="">
+                            <h4>Jack Me</h4>
+                            <p>12 Dec-2023 9:00 AM</p>
+                            <p>Requested for : <span>2 Subjects</span></p>
+                        </li>
+                        <li class="list3-2">
+                            <img src="./SVG/face-man-profile.svg" alt="">
+                            <h4>Hobbert You</h4>
+                            <p>18 Dec-2023 9:00 AM</p>
+                            <p>Requested for : <span>4 Subjects</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="toggle-cards" onclick="toggleCards()">Show More</div>
+        </div>
+    </div>
+</body>
+</html>

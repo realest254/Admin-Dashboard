@@ -1,0 +1,552 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    min-height:101%;
+ }
+body{
+    margin: 0;
+}
+@font-face {
+    font-family: cool-font;
+    src: url(../Sign-up-form/Norse-Bold.otf),
+         url(../Sign-up-form/Norse-Bold.woff2) format('woff2'),
+         url(../Sign-up-form/Norse-Bold.woff) format('woff');
+}
+.container {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 22% 78%;
+    background-color: aquamarine;
+}
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .container {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+    }
+    .header, .navigation, .main {
+        grid-column: 1 / -1; /* Full width for header, navigation, and main sections */
+    }
+}
+.header, .navigation, .main {
+    width: 100%;
+}
+
+.header{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: #e7e5e4;
+    gap: 10px;
+    width: 100%;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.5); /* Greyish border color */
+    box-shadow: 0 2px 4px rgba(128, 128, 128, 0.5); /* Greyish shadow */
+    padding: 10px; /* Add padding as needed */
+}
+.search{
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-width: 810px;
+}
+.search-container {
+    grid-column: 1 / 2;
+    position: relative;
+    min-width: 500px;
+}
+
+/* Basic Search Input Style */
+input[type="search"] {
+    position: absolute;
+    top: 15px;
+    left: 5.5em;
+    padding: 5px;
+    border: 1px solid #ccc; /* Subtle border color */
+    border-radius: 10px; /* Rounded corners */
+    transition: border-color 0.3s ease; /* Smooth transition effect */
+    background-color: #cccccce5;
+    width: 70%;
+}
+
+.search-icon {
+    width: var(--icon-size, 20px); /* Default icon size if --icon-size is not defined */
+    height: var(--icon-size, 20px); /* Default icon size if --icon-size is not defined */
+    background-image: url(./SVG/magnify.svg);
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 2.5em;
+}
+
+/* Style when the input is focused */
+input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #3498db; /* Highlight border color on focus */
+}
+.right-logo{
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1.5fr;
+}
+.right-icon{
+    grid-column: 1 / 2;
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url(./SVG/bell-ring.svg);
+    margin-top: 18px;
+}
+.right-logo img{
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    margin-top: 5px;
+    margin-left: 1em;
+    border-radius: 50%;
+    background-image: url(./SVG/logo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.right-logo h3 {
+    margin-top: 15px;
+    font-family: cool-font;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: 0;
+    min-width: 100px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+.intro{
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+}
+.image-heading{
+    grid-column: 1 / 2;
+    position: relative;
+}
+h2{
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: 5em;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+.image-heading a{
+    position: absolute;
+    top:10px ;
+    left: 9em;
+    font-weight: 600;
+    font-size: small;
+    text-decoration: none;
+    color: black;
+}
+.image-heading>img{
+    margin-top: 0;
+    margin-left: 2.5em;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url(./SVG/logo.jpg);
+    background-size: cover;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    min-width: 300px;
+}
+button {
+    background-color: #3498db; /* Blue background color */
+    color: #ffffff; /* White text color */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border: none; /* Remove default button border */
+    border-radius: 15px; /* Add rounded corners */
+    font-size: 16px; /* Adjust the font size */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    height: 30px;
+    width: 5.5em;
+    margin-top: 20px;
+}
+button:last-child{
+    margin-right: 20px;
+}
+
+button:hover {
+    background-color: #217dbb; /* Darker blue on hover */
+}
+
+
+.navigation {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1; /* Adjusting the grid row to fill remaining vertical space */
+    background-color: #0284c7;
+    color: white;
+    font-weight: bolder;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr; /* Adjusted grid template rows */
+    gap: 5px;
+}
+
+
+.main{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: #e2e8f0;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+}
+
+.list1 ul,.list2 ul{
+    list-style: none;
+    display:grid;
+    grid-template-rows: repeat(6,1fr);
+}
+
+.list1 a, .list2 a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.top-of-nav{
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-rows: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.3em;
+    
+}
+:root{
+    --icon-size:25px;
+}
+
+.list1{
+    grid-row: 2 / 3;
+}
+
+.list2{
+    grid-row: 3 / 4;
+    margin-top: 0;
+}
+
+.top-of-nav>li{
+    position: relative;
+    padding: 20px 22px;
+}
+.top-of-nav>li::before {
+    content: url('./SVG/view-dashboard.svg'); 
+    display: inline-block; /* Make sure the pseudo-element is inline-block or block to have dimensions */
+    position: absolute;
+    top: 12px;
+    left: -25px;
+    width: 40px; /* Set the width of the icon */
+    height: 40px; /* Set the height of the icon */
+    filter: invert(90%);
+  }
+
+  .list1>li{
+    position: relative;
+    padding: 10px 22px;
+  }
+  .list2>li{
+    position: relative;
+    padding: 10px 22px 3px;
+  }
+
+  .list1>.item1::before {
+    content: url('./SVG/home-account.svg'); 
+    display: inline-block; 
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size); 
+    filter: invert(90%);
+    cursor: pointer;
+  }
+  .list1>.item2::before {
+    content: url('./SVG/account-circle.svg'); 
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size);
+    filter: invert(90%); 
+    cursor: pointer;
+  }
+
+  .list1>.item3::before {
+    content: url('./SVG/message.svg'); 
+    display: inline-block; 
+    position: absolute;
+    top: 7px;
+    left: -20px;
+    width: var(--icon-size);
+    height: var(--icon-size); 
+    filter: invert(90%);
+    cursor: pointer;
+  }
+
+  .list1>.item4::before {
+    content: url('./SVG/history.svg'); 
+    display: inline-block; 
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size); 
+    filter: invert(90%);
+    cursor: pointer;
+  }
+
+  .list1>.item5::before {
+    content: url('./SVG/calendar-check.svg'); 
+    display: inline-block; 
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size); 
+    filter: invert(90%);
+    cursor: pointer;
+  }
+  .list1>.item6::before {
+    content: url('./SVG/google-circles-communities.svg'); 
+    display: inline-block; 
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size);
+    filter: invert(90%); 
+    cursor: pointer;
+  }
+  .list2>.item1::before {
+    content: url('./SVG/cog.svg'); 
+    display: inline-block; 
+    position: absolute;
+    top: 8px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size); 
+    filter: invert(90%);
+    cursor: pointer;
+  }
+  .list2>.item2::before {
+    content: url('./SVG/face-agent.svg'); 
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size); 
+    filter: invert(90%);
+    cursor: pointer;
+  }
+  .list2>.item3::before {
+    content: url('./SVG/shield-check-outline.svg'); 
+    display: inline-block; 
+    position: absolute;
+    top: 8px;
+    left: -20px;
+    width: var(--icon-size); 
+    height: var(--icon-size);
+    filter: invert(90%); 
+    cursor: pointer;
+  }
+  
+.form-container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+form{
+    grid-column: 1 / 2;
+    display: grid;
+    gap: 10px;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2,1fr);
+}
+progress {
+    width: 100%;
+    height: 10px;
+}
+form div {
+    margin-bottom: 10px; /* Add some margin between label and input */
+    min-width: 200px;
+    background-color: #fff; /* White background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    padding: 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+form label {
+    display: block; /* Display labels as blocks */
+    margin-bottom: 5px; /* Add margin below labels */
+}
+form:nth-child(1){
+    grid-column: 1 / 2;
+    grid-row: 1 /1;
+}
+form:nth-child(2){
+    grid-column: 2 /3;
+    grid-row: 1 / 2;
+}
+form:nth-child(3){
+    grid-column: 1 /2;
+    grid-row: 2 / 3;
+}
+form:nth-child(4){
+    grid-column: 2 /3;
+    grid-row: 2 / 3;
+}
+.chart-holder{
+    background-image: url(./SVG/column-chart-excel.png);
+    background-size: cover;
+    background-position:center -8em ;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.notice h3{
+    grid-row: 1/2;
+}
+.notice ul{
+    grid-row: 2/3;
+}
+.courses{
+    grid-column: 2 / 3;
+}
+.classes{
+    grid-column: 3 / 4;
+}
+.main ul{
+    list-style: none;
+}
+.lower-main {
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    overflow: hidden; /* Hide overflow content */
+}
+
+.notice,
+.courses,
+.classes {
+    padding: 10px; 
+    background-color: #cbd5e1; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+}
+.lower-main .notice li,
+.lower-main .courses li,
+.lower-main .classes li {
+    background-color: #e2e8f0; 
+    margin-top: 5px;
+    margin-left: 2px; 
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Shadow effect */
+    border-radius: 10px; 
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+.lower-main .notice li:hover,
+.lower-main .courses li:hover,
+.lower-main .classes li:hover {
+  background-color: #aaa5a5; /* Change the background color on hover */
+}
+.lower-main .notice ul,
+.lower-main .courses ul,
+.lower-main .classes ul{
+    margin: 0;
+    width: 270px;
+    min-width: 250px;
+    padding-left: 5px;
+} 
+span{
+    font-weight: bolder;
+}
+.lower-main .notice h3,
+.lower-main .courses h3,
+.lower-main .classes h3{
+    padding-left: 8px;
+}
+.lower-main .notice h4,
+.lower-main .courses h4,
+.lower-main .classes h4{
+    font-weight: 600;
+}
+.lower-main a {
+    color: #3498db; /* Set the default text color for links */
+    text-decoration: none; /* Remove underlines from links */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+  }
+  
+  .lower-main a:hover {
+    color: #e74c3c; /* Change the text color on hover */
+  }
+.lower-main img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+} 
+.lower-main h4{
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.lower-main p{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+}
+.toggle-cards {
+    position: fixed; /* or position: relative; */
+    bottom: 20px; 
+    right: 30px; 
+    text-align: center;
+    cursor: pointer;
+    color: #3498db;
+    padding: 10px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+}
+
+.toggle-cards:hover {
+    text-decoration: underline;
+}
+.lower-main .toggle-cards {
+    grid-column: span 3; /* Span across all columns */
+    text-align: center;
+    cursor: pointer;
+    color: #3498db;
+    margin-top: 10px;
+}
+
+.lower-main .toggle-cards:hover {
+    text-decoration: underline;
+}
+
+/* ... (other styles) */
+.lower-main.show-all-cards {
+    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    overflow: visible;
+}
+
